@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+    <title>Прогнозирование модуля упругости при растяжении</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+</head>
+
+<div class="container">
+    <form action="{{url_for('main')}}" method="POST" class="contact-box">
+    <div class="left"></div>
+    <div class="right">
+        <h2>Прогноз модуля упругости при растяжении</h2>
+        <input name = "ratio" type="number" class="field" placeholder="Соотношение матрица-наполнитель">
+        <input name = "density" type="number" class="field" placeholder="Плотность, кг/м3">
+        <input name = "elastic_module" type="number" class="field" placeholder="Модуль упругости, ГПа">
+        <input name = "amount" type="number" class="field" placeholder="Количество отвердителя, м.%">
+        <input name = "epoxy_gr" type="number" class="field" placeholder="Содержание эпоксидных групп,%_2">
+        <input name = "flash_point" type="number" class="field" placeholder="Температура вспышки, С_2">
+        <input name = "surface_density" type="number" class="field" placeholder="Поверхностная плотность, г/м2">
+        <input name = "resin_con" type="number" class="field" placeholder="Потребление смолы, г/м2">
+        <input name = "patch_angle" type="number" class="field" placeholder="Угол нашивки, град">
+        <input name = "patch_step" type="number" class="field" placeholder="Шаг нашивки">
+        <input name = "patch_dens" type="number" class="field" placeholder="Плотность нашивки">
+        <button class="btn">Вычислить</button>
+        <h3>Результат:</h3>
+        <div>
+            {% if result %}
+                <p class="result"> {{result}}</p>
+            {% endif %}
+        </div>
+    </div>
+    </form>
+</div>
+</div>
